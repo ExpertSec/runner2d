@@ -1,0 +1,11 @@
+res://Coin.tscn
+res://scene/node_2d.tscn
+res://Coin.cs
+res://scene/Player.cs
+res://coin.gd
+res://scene/player.tscn
+res://killzone.tscn
+res://script/killzone.gd
+res://scene/slime.tscn
+res://scene/slime.gd
+res://killzone.gd

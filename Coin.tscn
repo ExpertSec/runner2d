@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dxci2jeqb6bu2"]
+
+[ext_resource type="Texture2D" uid="uid://4nj7ixyfh2bv" path="res://asset/sprites/coin.png" id="1_h5dih"]
+[ext_resource type="Script" uid="uid://dl1qixfmxw3p8" path="res://script/coin.gd" id="1_ou7jl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou7jl"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufda5"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj540"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjs0g"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bqf1"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvgfy"]
+atlas = ExtResource("1_h5dih")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ql85g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou7jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufda5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj540")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjs0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bqf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvgfy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ql85g"]
+radius = 5.0
+
+[node name="Coin" type="Area2D" unique_id=650377644]
+script = ExtResource("1_ou7jl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1135016328]
+sprite_frames = SubResource("SpriteFrames_ql85g")
+autoplay = "default"
+frame_progress = 0.22370042
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632473794]
+shape = SubResource("CircleShape2D_ql85g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
